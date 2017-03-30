@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="css/main.css">
 
     <link rel="shortcut icon" type="image/ico" href="images/favicon.png">
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
 
     <!--[if lt IE 9]>
       <script src="js/respond.min.js"></script>
@@ -31,16 +32,75 @@
     <header class="site-header" role="banner">
       <div class="wrap">
         <h1>brwll</h1>
-        <nav class="site-nav" role="navigation">
-
-        </nav>
       </div>
     </header>
 
+    <a href="#" class="menu"></a>
+    <div class="menuoverlay">sup</div>
+
     <main class="site-main" role="main">
-      <div class="wrap">
-        <p></p>
+
+      <div class="project">
+        <div class="ms-holder">
+            <button class="data-prev"><</button>
+            <button class="data-next">></button>
+            <ul>
+                <li class="mini-slide first-slide" style="background-image: url(images/cocovit.jpg)">
+                </li>
+                <li class="mini-slide" style="background-image: url(https://firebelly.cachefly.net/uploads/work/flor-rebrand/b2_11__FLOR_Create_Notebook_04.jpg)">
+                </li>
+                <li class="mini-slide" style="background-image: url(https://firebelly.cachefly.net/uploads/work/flor-rebrand/b2_14__FLOR_Create_Notebook_03.jpg)">
+                </li>
+            </ul>
+        </div>
+        <div class="column">
+          <h3>&nbsp;3/<br>15/<br>17</h3>
+        </div>
+        <div class="column">
+        </div>
+        <div class="column">
+          <h4>Project</h4>
+          <h2>Cocovit</h2>
+          <h4>Type</h4>
+          <h2>Identity <br>Packaging</h2>
+        </div>
+        <div class="column">
+          <h4>Desc</h4>
+          <h2>Vestibulum id ligula porta euismod semper. Donec sed dui. Nullam quis risus eget. Vestibulum id ligula porta euismod semper et.</h2>
+        </div>
       </div>
+
+      <div class="project">
+        <div class="ms-holder">
+            <button class="data-prev"><</button>
+            <button class="data-next">></button>
+            <ul>
+                <li class="mini-slide first-slide" style="background-image: url(https://firebelly.cachefly.net/uploads/work/flor-rebrand/b2_10__FLOR_Create_Notebook_01.jpg)">
+                </li>
+                <li class="mini-slide" style="background-image: url(https://firebelly.cachefly.net/uploads/work/flor-rebrand/b2_11__FLOR_Create_Notebook_04.jpg)">
+                </li>
+                <li class="mini-slide" style="background-image: url(https://firebelly.cachefly.net/uploads/work/flor-rebrand/b2_14__FLOR_Create_Notebook_03.jpg)">
+                </li>
+            </ul>
+        </div>
+        <div class="column">
+          <h3>&nbsp;3/<br>15/<br>17</h3>
+        </div>
+        <div class="column">
+        </div>
+        <div class="column">
+          <h4>Project</h4>
+          <h2>Cocovit</h2>
+          <h4>Type</h4>
+          <h2>Identity <br>Packaging</h2>
+        </div>
+        <div class="column">
+          <h4>Desc</h4>
+          <h2>Vestibulum id ligula porta euismod semper. Donec sed dui. Nullam quis risus eget. Vestibulum id ligula porta euismod semper et.</h2>
+        </div>
+      </div>
+
+
     </main>
 
     <footer class="site-footer" role="contentinfo">
@@ -52,6 +112,7 @@
     <script src="js/jquery-1.11.1.js"></script>
     <script src="js/main.js"></script>
 
+
     <script type="text/javascript">// Google Analytics
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-XXXXX-X']); // Replace "XXXXX-X" with your account code
@@ -62,5 +123,200 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
     </script>
+
+    <script>
+
+    jQuery(document).ready(function ($) {
+
+    $(".ms-holder").each(function (j, el) {
+
+        var t = $(this), // the slider(s)
+            m = $(".mini-slide"), // the slide(s)
+            n = m.length, // number of slides
+            w = m.outerWidth(), // width of the slides
+            s = 0.8, // transition time in seconds
+            count = { // creating a counter object for each slide
+                j: 0,
+            },
+            c = count.j;
+
+        // position the slides horizontally
+        for (var i = 0; i < n; i++) {
+            $(".mini-slide:nth-child(" + (i + 1) + ")").css({
+                "left": "" + (i * w) + "px"
+            });
+        }
+
+        // Add a unique ID to each slide - this is so we can target individual click events
+        t.attr("id", "slider-" + j);
+
+        // Add click functionality to cycle through the slides
+        $("#slider-" + j + " button").on("click", function (event) {
+            event.preventDefault();
+
+            var id = $(this).parent().attr("id"),
+                th = $(this),
+                l = $("#slider-"+ j +" .mini-slide").length;
+
+
+            if (th.is(".data-next")) {
+                c++; // increase the counter
+                if (c >= l) {
+                    c = 0; // set a limit on the counter
+                }
+            } else {
+                c--; // decrease the counter
+                if (c < 0) {
+                    c = l - 1; // set a limit on the counter
+                }
+            }
+
+            // make those puppies move with css3
+            $("#slider-" + j + " ul").css({
+                "-webkit-transform": "translate3d(" + (-c * w) + "px, 0px, 0px)",
+                "-webkit-transition": s + "s ease",
+
+                // For old, outdated, and/or non webkit browswers - only if needed
+                "-moz-transform": "translate3d(" + (-c * w) + "px, 0px, 0px)",
+                "-moz-transition": s + "s ease",
+                "-ms-transform": "translate3d(" + (-c * w) + "px, 0px, 0px)",
+                "-ms-transition": s + "s ease",
+                "-o-transform": "translate3d(" + (-c * w) + "px, 0px, 0px)",
+                "-o-transition": s + "s ease",
+                "transform": "translate3d(" + (-c * w) + "px, 0px, 0px)",
+                "transition": s + "s ease"
+            });
+        });
+    });
+});
+    </script>
+
+    <script>
+
+    jQuery(document).ready(function ($) {
+
+    $(window).resize(function(){
+
+    $(".ms-holder").each(function (j, el) {
+
+        var t = $(this), // the slider(s)
+            m = $(".mini-slide"), // the slide(s)
+            n = m.length, // number of slides
+            w = m.outerWidth(), // width of the slides
+            s = 0.8, // transition time in seconds
+            count = { // creating a counter object for each slide
+                j: 0,
+            },
+            c = count.j;
+
+        // position the slides horizontally
+        for (var i = 0; i < n; i++) {
+            $(".mini-slide:nth-child(" + (i + 1) + ")").css({
+                "left": "" + (i * w) + "px"
+            });
+        }
+
+        // Add a unique ID to each slide - this is so we can target individual click events
+        t.attr("id", "slider-" + j);
+
+        // Add click functionality to cycle through the slides
+        $("#slider-" + j + " button").on("click", function (event) {
+            event.preventDefault();
+
+            var id = $(this).parent().attr("id"),
+                th = $(this),
+                l = $("#slider-"+ j +" .mini-slide").length;
+
+
+            if (th.is(".data-next")) {
+                c++; // increase the counter
+                if (c >= l) {
+                    c = 0; // set a limit on the counter
+                }
+            } else {
+                c--; // decrease the counter
+                if (c < 0) {
+                    c = l - 1; // set a limit on the counter
+                }
+            }
+
+            // make those puppies move with css3
+            $("#slider-" + j + " ul").css({
+                "-webkit-transform": "translate3d(" + (-c * w) + "px, 0px, 0px)",
+                "-webkit-transition": s + "s ease",
+
+                // For old, outdated, and/or non webkit browswers - only if needed
+                "-moz-transform": "translate3d(" + (-c * w) + "px, 0px, 0px)",
+                "-moz-transition": s + "s ease",
+                "-ms-transform": "translate3d(" + (-c * w) + "px, 0px, 0px)",
+                "-ms-transition": s + "s ease",
+                "-o-transform": "translate3d(" + (-c * w) + "px, 0px, 0px)",
+                "-o-transition": s + "s ease",
+                "transform": "translate3d(" + (-c * w) + "px, 0px, 0px)",
+                "transition": s + "s ease"
+            });
+            });
+        });
+    });
+});
+    </script>
+
+    <script>
+    $(function(){
+	$(".menu").click(function(){
+  	$(".menuoverlay").toggleClass("open");
+  });
+});
+
+$(function(){
+	$(".menu").click(function(){
+  	$(".menu").toggleClass("open");
+  });
+});
+    </script>
+
+    <script>
+    // Hide Header on on scroll down
+var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $(this).scrollTop();
+
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > 1){
+        // Scroll Down
+        $('.menu').addClass('nav-hide');
+        $('header').addClass('nav-hide');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('.menu').removeClass('nav-hide');
+            $('header').removeClass('nav-hide');
+        }
+    }
+
+    lastScrollTop = st;
+}
+
+    </script>
+
   </body>
 </html>
