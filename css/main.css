@@ -154,12 +154,6 @@ header.nav-hide{
   transition: opacity 1s;
 }
 
-.project {
-  width:100%;
-  background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAHUlEQVQoU2P88OHDfwYiACMRasBKRhXiDSmigwcAGq0D2rwvGt0AAAAASUVORK5CYII=
-    ) repeat;
-  /*position: absolute;*/
-}
 
 .column1 {
   float: left;
