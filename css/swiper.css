@@ -221,7 +221,9 @@
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   z-index: 10;
+
 }
+
 .swiper-pagination.swiper-pagination-hidden {
   opacity: 0;
 }
@@ -651,6 +653,7 @@ button.swiper-pagination-bullet {
 
     .swiper-button-prev {
         left: 11px;
+
     }
     .swiper-button-prev:hover {
         left: 11px;
@@ -658,6 +661,7 @@ button.swiper-pagination-bullet {
     .swiper-button-next {
         right: 11px;
         left: auto;
+
     }
     .swiper-button-next:hover {
         right: 11px;

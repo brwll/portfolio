@@ -91,6 +91,7 @@ header.nav-hide{
   font-size:2em;
   text-decoration:none;
   transition: right 0.2s ease-in-out;
+
 }
 
 .menu.nav-hide {
@@ -156,6 +157,7 @@ header.nav-hide{
 
 .project{
   overflow: hidden;
+  background: #fff;
 }
 
 
@@ -246,6 +248,8 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
   -ms-flex-align: center;
   -webkit-align-items: center;
   align-items: center;
+  background-size: cover;
+  background-position:center;
 }
 
 .vimeo-wrapper iframe{
