@@ -154,6 +154,10 @@ header.nav-hide{
   transition: opacity 1s;
 }
 
+.project{
+  overflow: hidden;
+}
+
 
 .column1 {
   float: left;
@@ -164,14 +168,14 @@ header.nav-hide{
 
 .column2 {
   float: left;
-  padding: 50px 50px 10px 50px;
+  padding: 70px 50px 30px 50px;
   margin: 0;
   width: 25%;
 }
 
 .column3 {
   float: left;
-  padding: 50px 50px 10px 50px;
+  padding: 70px 50px 30px 50px;
   margin: 0;
   width: 25%;
 }
@@ -225,73 +229,47 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
 /* END Utility Classes */
 
 
-.ms-holder {
-    position: relative;
-    display: inline-block;
-    float: left;
-    width: 100%;
-    height: 66vw;
-    max-height: calc(100vh - 110px);
-    overflow: hidden;
-    z-index: -1;
-}
-.mini-slide {
-    position: absolute;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size:cover;
-    background-position: center;
-}
-.first-slide{
-  background-attachment:fixed;
-}
-.ms-holder ul {
-    position: absolute;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    margin:0;
-}
-.ms-holder li{
-  list-style-type: none;
-}
-.data-prev, .data-next {
-    position: absolute;
-    top: 50%;
-    width: 40px;
-    height: 40px;
-    margin-top: -20px;
-    z-index: 1;
-    -webkit-appearance: none;
-    border: none;
-    cursor: pointer;
-    color: #000;
-    background:none;
-    font-size: 2em;
-    -webkit-transition: .1s ease;
-    transition: .1s ease;
+
+
+.swiper-slide {
+  text-align: center;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
 
-.data-prev {
-    left: 36px;
+.vimeo-wrapper iframe{
+  width: 100vw;
+  height: 56.25vw;
+  min-height: 100vh;
+  min-width: 177.77vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
-.data-prev:hover {
-    left: 32px;
+
+.vimeo-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  transition: opacity .2s ease-out;
 }
-.data-next {
-    right: 36px;
-    left: auto;
-}
-.data-next:hover {
-    right: 32px;
-}
-.ms-holder p {
-    text-align: center
-}
+
 
 
 /* Responsive Styles */
@@ -314,7 +292,7 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
     padding-right: 43px;
   }
   .column2 {
-    margin-top: -113px;
+    margin-top: -59px;
     padding-bottom:0;
   }
   .column3 {
@@ -345,6 +323,7 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
   }
   .column2 {
     padding-bottom:0;
+    margin-top: -64px;
   }
   .column3 {
     padding-top:0;
@@ -364,6 +343,7 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
   .menu.open{
     right:11px;
   }
+
 
 }
 
