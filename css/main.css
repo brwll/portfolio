@@ -1,4 +1,14 @@
 /* Global Styles */
+@font-face {
+  font-family: 'Basis';
+  src: url('../fonts/basis-grotesque-regular.eot'),
+      url('../fonts/basis-grotesque-regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/basis-grotesque-regular.woff2') format('woff2'),
+       url('../fonts/basis-grotesque-regular.woff') format('woff'),
+       url('../fonts/basis-grotesque-regular.ttf')  format('truetype');
+}
+
+
 *, *::before, *::after {
   box-sizing: inherit;
 }
@@ -19,10 +29,9 @@ html {
 
 body {
   font-size: 12px;
-  font-family: Helvetica, sans-serif;
-  font-weight:500;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Basis';
+  font-weight: normal;
+  font-style: normal;
 }
 
 p {
@@ -32,6 +41,8 @@ p {
   font-size: 2em;
   line-height: 27px;
   margin-bottom: 45px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1 {
@@ -40,6 +51,8 @@ h1 {
   font-style: normal;
   font-size: 2em;
   line-height: 27px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h2 {
@@ -49,6 +62,8 @@ h2 {
   font-size: 2em;
   line-height: 27px;
   margin-bottom: 64px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h3 {
@@ -139,7 +154,7 @@ header {
   position: absolute;
   top: -2px;
   left: 13px;
-  font-size: 22px;
+  font-size: 23px;
   transition: 0.25s;
 }
 
@@ -160,7 +175,7 @@ header {
   position: absolute;
   top: 3px;
   left: 13px;
-  font-size: 22px;
+  font-size: 23px;
   transition: 0.25s;
 }
 
@@ -238,31 +253,28 @@ header {
 .menuoverlay a {
   color:#fff;
   text-decoration: none;
-  text-shadow:
-    -1px -1px 0 #FFF,
-    1px -1px 0 #FFF,
-    -1px 1px 0 #FFF,
-    1px 1px 0 #FFF;
   border-bottom: 1px solid #fff;
+  transition: border-bottom .2s ease-out;
 }
 
 
-
-@supports((text-stroke: 2px black) or (-webkit-text-stroke: 2px black)) {
-    .menuoverlay a {
-        color: transparent;
-        -webkit-text-stroke: .6px #fff;
-        text-stroke: .6px #fff;
-        text-shadow: none;
-        /*transition: color .2s ease-out;*/
-    }
-    .menuoverlay a:hover {
-        color: #fff;
-        -webkit-text-stroke: 0px black;
-        text-stroke: 0px #fff;
-    }
+.menuoverlay a:hover{
+  border-bottom: 1px solid #000;
 }
 
+
+.grain {
+  position: fixed;
+  pointer-events: none;
+  width:100vw;
+  height:100vh;
+  z-index: 99999;
+  background-image: url("../images/grain.gif");
+  background-repeat: repeat;
+  background-size: 400px;
+  mix-blend-mode: soft-light;
+
+}
 
 
 
@@ -340,7 +352,7 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
   left:35%;
   top:10%;
   white-space: nowrap;
-  font-size:96px;
+  font-size:6em;
   text-shadow:
     -1px -1px 0 #FFF,
     1px -1px 0 #FFF,
@@ -404,9 +416,9 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
 
 .image-container {
   position:absolute;
-  width: 80vw;
+  width: 70vw;
   height: calc(100vh - 20vw);
-  left:10vw;
+  left:15vw;
   top:10vw;
   padding:100px;
 }
@@ -424,6 +436,7 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
   justify-content: center;
   transition: opacity .1s ease-out;
   transition-delay: .25s;
+  pointer-events: none;
 }
 
 
@@ -432,7 +445,7 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
   max-height: 100%;
   outline: 10vw solid #fff;
   outline-offset: -10vw;
-  transition: outline-offset .5s ease-out;
+  transition: outline-offset .3s ease-out;
   transition-delay: .25s;
   display: block;
 }
