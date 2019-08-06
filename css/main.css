@@ -507,6 +507,10 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
     width: 33%;
   }
 
+  .element {
+    font-size: 5em;
+  }
+
 }
 
 @media only screen and (max-width: 767px) {
@@ -536,6 +540,10 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
 
   .menuoverlay .column3 {
     padding-top: 0;
+  }
+
+  .element {
+    font-size: 4em;
   }
 
 }
@@ -569,6 +577,10 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
   }
   .menu.open{
     right:11px;
+  }
+
+    .element {
+    font-size: 3em;
   }
 
 
