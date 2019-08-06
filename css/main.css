@@ -348,7 +348,7 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
 }
 
 #wrapper {
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 100vh;
   background:#C8C5BE;
