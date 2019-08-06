@@ -349,8 +349,6 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
   font-weight: normal;
   font-style: normal;
   position: absolute;
-  left:35%;
-  top:10%;
   white-space: nowrap;
   font-size:6em;
   text-shadow:
@@ -458,12 +456,6 @@ body:hover .visually-hidden a, body:hover .visually-hidden input, body:hover .vi
   outline-offset: 0;
 
 }
-
-
-
-
-
-
 
 
 

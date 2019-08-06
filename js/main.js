@@ -6,10 +6,10 @@ $(document).ready(function() {
       y: 0
     },
     impulse: {
-      f: 500,
+      f: 250,
       p: {
-        x: 1,
-        y: 5
+        x: 0,
+        y: 10
       }
     },
     autostart: true,
