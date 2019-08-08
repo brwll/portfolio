@@ -22,35 +22,48 @@ $(document).ready(function() {
 
 $('.element').on('mouseenter', function() {
   var projectId = $(this).attr('data-project-id');
-  $('.image[data-project-id="'+projectId+'"]').addClass("show");
+  $('.image[data-project-id="'+projectId+'"], .hoverimage[data-project-id="'+projectId+'"], .hold[data-project-id="'+projectId+'"]').addClass("show");
 }).on('mouseleave', function() {
   var projectId = $(this).attr('data-project-id');
-  $('.image[data-project-id="'+projectId+'"]').removeClass("show");
+  $('.image[data-project-id="'+projectId+'"], .hoverimage[data-project-id="'+projectId+'"], .hold[data-project-id="'+projectId+'"]').removeClass("show");
 });
 
-$('.element').on('mouseenter', function() {
-  var projectId = $(this).attr('data-project-id');
-  $('.hoverimage[data-project-id="'+projectId+'"]').addClass("show");
+
+$('.click-n-hold').on('mousedown', function() {
+  $('.image-container').addClass("grow");
+}).on('mouseup', function() {
+  $('.image-container').removeClass("grow");
 }).on('mouseleave', function() {
-  var projectId = $(this).attr('data-project-id');
-  $('.hoverimage[data-project-id="'+projectId+'"]').removeClass("show");
+  $('.image-container').removeClass("grow");
 });
 
 
-    $(function(){
-	$(".menu").click(function(){
-  	$(".menuoverlay").toggleClass("open");
-  });
+$(".menu").click(function(){
+  $(".menuoverlay, .menu, .hold").toggleClass("open");
+  $(".element").toggleClass("elementoverlay");
 });
 
-$(function(){
-	$(".menu").click(function(){
-  	$(".menu").toggleClass("open");
-  });
+
+var timeout_id = 0,
+    hold_time = 1500,
+    $hold_trigger = $('.click-n-hold');
+
+$hold_trigger.on('click', function(e) {
+  e.preventDefault();
+})
+
+$hold_trigger.on('mousedown', function(e) {
+  e.preventDefault();
+  var $project = $(this);
+  timeout_id = setTimeout(function() {
+    openProject($project);
+  },hold_time);
+}).bind('mouseup mouseleave', function() {
+    clearTimeout(timeout_id);
 });
 
-    $(function(){
-	$(".menu").click(function(){
-  	$(".element").toggleClass("elementoverlay");
-  });
-});
+function openProject($project) {
+  var projectUrl = $project.attr('href');
+  // window.location.href = projectUrl;
+  window.open(projectUrl,'_blank');
+}
