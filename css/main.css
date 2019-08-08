@@ -112,34 +112,10 @@ img {
 
 header {
   position: fixed;
-  z-index: 99;
+  z-index: 999;
   left: 50px;
   top: 17px;
 }
-
-/*.ross {
-  position: fixed;
-  z-index: 99;
-  left: 4px;
-  top: calc(50vh - 30px);
-  -ms-transform: rotate(-90deg);
-  -webkit-transform: rotate(-90deg);
-  transform: rotate(-90deg);
-  width: 100px;
-  text-align: center;
-}
-
-.burwell {
-  position: fixed;
-  z-index: 99;
-  right: 4px;
-  top: calc(50vh - 30px);
-  -ms-transform: rotate(90deg);
-  -webkit-transform: rotate(90deg);
-  transform: rotate(90deg);
-  width:100px;
-  text-align:center;
-}*/
 
 .menuoverlay h1, h2, h3, p, a {
   color:#fff;
