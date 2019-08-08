@@ -29,9 +29,9 @@ $('.element').on('mouseenter', function() {
 });
 
 
-$('.click-n-hold').on('mousedown tap', function() {
+$('.click-n-hold').on('mousedown', function() {
   $('.image-container').addClass("grow");
-}).on('mouseup mouseleave vmouseup', function() {
+}).on('mouseup mouseleave', function() {
   $('.image-container').removeClass("grow");
 });
 
